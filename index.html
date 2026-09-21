@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HelpMeStudy helps KS3 and KS4 students find study resources, build revision timetables and join year-group study groups.">
+<title>HelpMeStudy | Search less. Study more.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="#home" aria-label="HelpMeStudy home"><span class="logo-mark">▱</span> HelpMeStudy</a>
+  <nav aria-label="Main navigation">
+    <a class="active" href="#home">Home</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#library">Resources</a>
+    <a href="#planner">Revision Timetable</a>
+    <a href="#groups">Study Groups</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="top-actions">
+    <div class="mini-search"><span>⌕</span><input id="search" aria-label="Search resources" placeholder="Search resources, subjects..."></div>
+    <button id="theme" aria-label="Toggle dark mode">☾</button>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-shape shape-a"></div><div class="hero-shape shape-b"></div>
+  <div class="hero-note note-left">Better<br>resources<br>↗<br>Brighter<br>future ♡</div>
+  <div class="hero-main">
+    <div class="hero-book">▱</div>
+    <p class="eyebrow">YOUR STUDY SPACE</p>
+    <h1>Search less.<br><span>Study more.</span></h1>
+    <p class="hero-copy">HelpMeStudy brings together trusted resources,<br class="desktop-only"> custom revision timetables and study groups, all in one place.</p>
+    <div class="hero-search"><span>⌕</span><input id="heroSearch" placeholder="Search for a subject, topic, or resource..." aria-label="Search for a subject, topic, or resource"><button id="heroSearchButton">→</button></div>
+  </div>
+  <div class="hero-note note-right">Learn<br>something<br>new ♡<br><span>✦</span></div>
+  <div class="hero-books" aria-hidden="true"><span>▰</span><span>▰</span><span>▰</span></div>
+</section>
+
+<section id="levels" class="levels">
+  <button class="level ks3" data-level="KS3">
+    <div class="level-icon">⌂</div><span>KS3</span><b>Build your foundation.</b>
+    <div class="level-subjects"><i>Mathematics</i><i>Science</i><i>English</i><i>Geography</i><i>History</i><i>Computing</i><i>Languages</i><i>Business / Economics</i></div>
+    <em>Explore KS3 Subjects <strong>→</strong></em>
+  </button>
+  <button class="level ks4" data-level="KS4">
+    <div class="level-icon">⌂</div><span>KS4</span><b>Aim higher.</b>
+    <div class="level-subjects"><i>Mathematics</i><i>Science</i><i>English</i><i>Geography</i><i>History</i><i>Computing</i><i>Languages</i><i>Business / Economics</i></div>
+    <em>Explore KS4 Subjects <strong>→</strong></em>
+  </button>
+</section>
+
+<section class="quick-actions">
+  <a href="#planner" class="quick-card"><div class="quick-icon">▣</div><div><h3>Create Your Revision Timetable</h3><p>Tell us how many subjects you do and we'll build a personalised plan for you.</p></div><b>Get Started →</b></a>
+  <a href="#subjects" class="quick-card mint"><div class="quick-icon">⌕</div><div><h3>Browse Resources</h3><p>Find videos, notes, past papers, quizzes and more, all in one place.</p></div><b>Visit Resources →</b></a>
+  <a href="#groups" class="quick-card"><div class="quick-icon">♧</div><div><h3>Join a Study Group</h3><p>Scan your year group's QR code and learn together on Gizmo.</p></div><b>Explore Study Groups →</b></a>
+</section>
+
+<section id="groups" class="section groups-section">
+  <div class="group-intro">
+    <div class="star">★</div>
+    <div><p class="eyebrow">STUDY TOGETHER</p><h2>Gizmo Study Groups</h2><p>Join your class's study group on Gizmo for extra support, daily quizzes and peer learning.</p><div class="scan-note">Scan the QR code<br>to join your year group <span>↗</span></div></div>
+  </div>
+  <div class="group-grid">
+    <a class="group-card year9" href="https://app.gizmo.ai/conversations/01a0c376-2d34-7b4b-8747-0342098dcf8f?isGroup=1&title=Year9" target="_blank" rel="noopener noreferrer">
+      <div class="qr-wrap"><img src="assets/year9.png" alt="Year 9 Gizmo study group QR code"></div><h3>Year 9</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
+    </a>
+    <a class="group-card year10" href="https://app.gizmo.ai/conversations/01a0c378-5341-7baf-a4b7-020e00f71e6f?isGroup=1&title=Year10" target="_blank" rel="noopener noreferrer">
+      <div class="qr-wrap"><img src="assets/year10.png" alt="Year 10 Gizmo study group QR code"></div><h3>Year 10</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
+    </a>
+    <a class="group-card year11" href="https://app.gizmo.ai/conversations/01a0c37a-8c5b-7c1a-ae07-88a6f29062a8?isGroup=1&title=Year11" target="_blank" rel="noopener noreferrer">
+      <div class="qr-wrap"><img src="assets/year11.png" alt="Year 11 Gizmo study group QR code"></div><h3>Year 11</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
+    </a>
+  </div>
+</section>
+
+<section id="planner" class="section planner">
+  <div class="section-title centered"><p class="eyebrow">PERSONALISED REVISION</p><h2>Build your revision timetable.</h2><p>Tell HelpMeStudy what you study and when you can revise. We'll spread your subjects across your available sessions.</p></div>
+  <div class="planner-box">
+    <div class="planner-step"><span>1</span><div><h3>How many subjects do you do?</h3><p>Choose the number, then select your subjects from the HelpMeStudy list.</p></div></div>
+    <div class="planner-controls"><label for="subjectCount">Number of subjects</label><select id="subjectCount"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option></select></div>
+    <div class="subject-picker" id="subjectPicker"></div>
+    <div class="planner-step"><span>2</span><div><h3>Choose your study week.</h3><p>Pick the days you want to revise and how many sessions you want each day.</p></div></div>
+    <div class="day-picker">
+      <label><input type="checkbox" value="Monday" checked> Monday</label><label><input type="checkbox" value="Tuesday" checked> Tuesday</label><label><input type="checkbox" value="Wednesday" checked> Wednesday</label><label><input type="checkbox" value="Thursday" checked> Thursday</label><label><input type="checkbox" value="Friday" checked> Friday</label><label><input type="checkbox" value="Saturday" checked> Saturday</label><label><input type="checkbox" value="Sunday"> Sunday</label>
+    </div>
+    <div class="planner-controls"><label for="sessionsPerDay">Sessions per study day</label><select id="sessionsPerDay"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select></div>
+    <button id="makeTimetable" class="planner-button">Create my timetable ✨</button>
+    <div id="plannerMessage" class="planner-message"></div><div id="timetable" class="timetable"></div>
+  </div>
+</section>
+
+<section id="subjects" class="section resources-section">
+  <div class="section-title"><p class="eyebrow">THE RESOURCE DIRECTORY</p><h2>Find what you need.</h2><p>Search by subject, level or resource type. General sites are useful starting points, while subject cards take you straight to specific learning material.</p></div>
+  <div class="filters">
+    <select id="levelFilter"><option value="ALL">All levels</option><option>GENERAL</option><option>KS3</option><option>KS4</option></select>
+    <select id="subjectFilter"><option value="ALL">All subjects</option></select>
+    <select id="typeFilter"><option value="ALL">All resource types</option><option>General Site</option><option>Video</option><option>Lessons</option><option>Practice</option><option>Notes</option><option>Past Papers</option><option>Quizzes</option></select>
+    <button id="clear">Clear filters</button>
+  </div>
+  <div id="cards" class="cards"></div><p id="empty" class="empty">No resources match those filters yet.</p>
+</section>
+
+<section id="library" class="section library">
+  <div class="section-title centered"><p class="eyebrow">A SIMPLE STUDY LOOP</p><h2>Learn → Practise → Test</h2><p>Use HelpMeStudy as your launchpad, then study on the original resource site.</p></div>
+  <div class="path"><div><b>1</b><strong>Learn</strong><small>Watch a lesson or read notes.</small></div><i>→</i><div><b>2</b><strong>Practise</strong><small>Try questions and activities.</small></div><i>→</i><div><b>3</b><strong>Test</strong><small>Use quizzes or exam questions.</small></div></div>
+</section>
+
+<section id="about" class="section about"><p class="eyebrow">ABOUT HELPMESTUDY</p><h2>A calmer way through the study internet.</h2><p>HelpMeStudy organises useful KS3 and KS4 materials, gives students a custom revision planner and makes year-group study groups easier to find. External resources open in a new tab, so the original creators keep their own content.</p></section>
+</main>
+<footer><div><strong>▱ HelpMeStudy</strong><span>“Small steps make big progress.” ♡</span></div><nav><a href="#about">Help</a><a href="#about">Contact</a><a href="#about">Privacy</a></nav></footer>
+<script src="js/app.js"></script>
+</body>
+</html>
