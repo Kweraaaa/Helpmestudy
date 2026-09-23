@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="topbar">
@@ -19,6 +19,7 @@
     <a href="#library">Resources</a>
     <a href="#planner">Revision Timetable</a>
     <a href="#groups">Study Groups</a>
+    <a href="#study-tools">Study Tools</a>
     <a href="#about">About</a>
   </nav>
   <div class="top-actions">
@@ -59,6 +60,7 @@
   <a href="#planner" class="quick-card"><div class="quick-icon">▣</div><div><h3>Create Your Revision Timetable</h3><p>Tell us how many subjects you do and we'll build a personalised plan for you.</p></div><b>Get Started →</b></a>
   <a href="#subjects" class="quick-card mint"><div class="quick-icon">⌕</div><div><h3>Browse Resources</h3><p>Find videos, notes, past papers, quizzes and more, all in one place.</p></div><b>Visit Resources →</b></a>
   <a href="#groups" class="quick-card"><div class="quick-icon">♧</div><div><h3>Join a Study Group</h3><p>Scan your year group's QR code and learn together on Gizmo.</p></div><b>Explore Study Groups →</b></a>
+  <a href="#study-tools" class="quick-card mint"><div class="quick-icon">🌱</div><div><h3>Grow While You Study</h3><p>Start a focus session and grow your study plant as the minutes pass.</p></div><b>Open Study Tools →</b></a>
 </section>
 
 <section id="groups" class="section groups-section">
@@ -92,6 +94,145 @@
     <div class="planner-controls"><label for="sessionsPerDay">Sessions per study day</label><select id="sessionsPerDay"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select></div>
     <button id="makeTimetable" class="planner-button">Create my timetable ✨</button>
     <div id="plannerMessage" class="planner-message"></div><div id="timetable" class="timetable"></div>
+  </div>
+</section>
+
+
+<section id="study-tools" class="section study-tools">
+  <div class="section-title centered">
+    <p class="eyebrow">YOUR STUDY DASHBOARD</p>
+    <h2>Study smarter, not louder.</h2>
+    <p>Grow a plant, protect your streak, figure out how cooked you are and switch into Candidate Mode when exams get serious.</p>
+  </div>
+
+  <div class="tools-grid">
+    <article class="tool-card plant-tool">
+      <div class="tool-heading">
+        <div><p class="eyebrow">FOCUS TIMER</p><h3>Grow your study plant 🌱</h3></div>
+        <span class="tool-badge" id="timerStatus">Ready</span>
+      </div>
+
+      <div class="plant-stage" aria-live="polite">
+        <div id="plantVisual" class="plant-visual stage-0">🌱</div>
+        <div class="plant-soil"></div>
+      </div>
+
+      <div class="timer-display" id="timerDisplay">25:00</div>
+      <p class="tool-hint" id="timerMessage">Set a session and let your little plant grow with you.</p>
+
+      <div class="timer-presets" role="group" aria-label="Study time">
+        <button class="timer-preset" data-minutes="15">15 min</button>
+        <button class="timer-preset active" data-minutes="25">25 min</button>
+        <button class="timer-preset" data-minutes="45">45 min</button>
+        <button class="timer-preset" data-minutes="60">60 min</button>
+      </div>
+
+      <div class="custom-time">
+        <label for="customMinutes">Custom</label>
+        <input id="customMinutes" type="number" min="1" max="180" placeholder="minutes">
+        <button id="setCustomTimer" class="small-button">Set</button>
+      </div>
+
+      <div class="timer-actions">
+        <button id="startTimer" class="planner-button">Start growing 🌱</button>
+        <button id="resetTimer" class="secondary-button">Reset</button>
+      </div>
+    </article>
+
+    <article class="tool-card streak-tool">
+      <div class="tool-heading">
+        <div><p class="eyebrow">CONSISTENCY</p><h3>Study streak 🔥</h3></div>
+        <span class="streak-flame" id="streakFlame">🔥</span>
+      </div>
+      <div class="streak-number"><span id="streakCount">0</span><small>day streak</small></div>
+      <p class="tool-hint" id="streakMessage">Complete a focus session to start your streak.</p>
+      <div class="streak-week" id="streakWeek" aria-label="Study activity this week"></div>
+      <button id="resetStreak" class="text-button">Reset streak</button>
+    </article>
+
+    <article class="tool-card cooked-tool">
+      <div class="tool-heading">
+        <div><p class="eyebrow">BE HONEST 😭</p><h3>How cooked are you?</h3></div>
+        <span class="tool-badge">No judgement</span>
+      </div>
+      <div class="cooked-controls">
+        <label>Year
+          <select id="cookedYear">
+            <option value="9">Year 9</option>
+            <option value="10" selected>Year 10</option>
+            <option value="11">Year 11</option>
+          </select>
+        </label>
+        <label>Subject
+          <select id="cookedSubject">
+            <option>Mathematics</option>
+            <option>Biology</option>
+            <option>Chemistry</option>
+            <option>Physics</option>
+            <option>English</option>
+            <option>ICT / Computing</option>
+            <option>Economics / Business</option>
+            <option>Geography</option>
+            <option>History</option>
+            <option>Languages</option>
+            <option>PE</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Current state
+          <select id="cookedLevel">
+            <option value="1">😎 We're chilling</option>
+            <option value="2">🙂 A little cooked</option>
+            <option value="3" selected>🫠 Pretty cooked</option>
+            <option value="4">🔥 Absolutely cooked</option>
+            <option value="5">🚨 Exam emergency</option>
+          </select>
+        </label>
+      </div>
+      <div id="studyRecommendation" class="recommendation">
+        <strong>Today's mission</strong>
+        <p>Choose your situation and HelpMeStudy will build a small, realistic mission.</p>
+      </div>
+      <button id="makeRecommendation" class="planner-button">Tell me what to study →</button>
+    </article>
+
+    <article class="tool-card candidate-tool">
+      <div class="tool-heading">
+        <div><p class="eyebrow">EXAM MODE</p><h3>Candidate Mode 🎓</h3></div>
+        <button id="candidateToggle" class="mode-toggle" aria-pressed="false">Off</button>
+      </div>
+      <p class="tool-hint">Switch this on when you want HelpMeStudy to feel like exam season. Your settings stay on this device.</p>
+
+      <div class="candidate-controls">
+        <label>Candidate year
+          <select id="candidateYear">
+            <option value="9">Year 9</option>
+            <option value="11">Year 11</option>
+          </select>
+        </label>
+        <label>Exam / assessment date
+          <input id="candidateDate" type="date">
+        </label>
+      </div>
+
+            <div class="candidate-message-card">
+        <div class="candidate-message-icon">🎓</div>
+        <div>
+          <p class="eyebrow">CANDIDATE CORNER</p>
+          <h4>A message for our candidates</h4>
+          <p>You do not need to have everything figured out today. Pick one topic, learn it, then take the next step.</p>
+          <span>— A fellow candidate</span>
+        </div>
+      </div>
+
+<div class="candidate-countdown">
+        <div><span id="candidateDays">--</span><small>days left</small></div>
+        <div><span id="candidatePercent">0%</span><small>countdown progress</small></div>
+      </div>
+      <div class="progress-track"><span id="candidateProgress"></span></div>
+      <p id="candidateMessage" class="candidate-message">Pick a date to start your countdown.</p>
+      <button id="saveCandidate" class="planner-button">Save Candidate Mode</button>
+    </article>
   </div>
 </section>
 
