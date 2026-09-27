@@ -31,12 +31,12 @@
 <main>
 <section id="home" class="hero">
   <div class="hero-shape shape-a"></div><div class="hero-shape shape-b"></div>
-  <div class="hero-note note-left">Study<br>resources<br>↗<br><br>and motivation</div>
+  <div class="hero-note note-left">Learning<br>resources<br>↗<br><br></div>
   <div class="hero-main">
     <div class="hero-book">▱</div>
     <p class="eyebrow">YOUR STUDY SPACE</p>
     <h1>Search less.<br><span>Study more.</span></h1>
-    <p class="hero-copy">HelpMeStudy brings together trusted free resources,<br class="desktop-only"> custom revision timetables and study groups, all in one place.</p>
+    <p class="hero-copy">HelpMeStudy brings together trusted resources,<br class="desktop-only"> custom revision timetables and study groups, all in one place.</p>
     <div class="hero-search"><span>⌕</span><input id="heroSearch" placeholder="Search for a subject, topic, or resource..." aria-label="Search for a subject, topic, or resource"><button id="heroSearchButton">→</button></div>
   </div>
   <div class="hero-note note-right"></div>
@@ -66,8 +66,7 @@
 <section id="groups" class="section groups-section">
   <div class="group-intro">
     <div class="star">★</div>
-    <div><p class="eyebrow">STUDY TOGETHER</p><h2>Gizmo Study Groups</h2>
-    <p>Join your year's study group on Gizmo.</p><div class="scan-note">Scan the QR code<br>to join your year group <span>↗</span></div></div>
+    <div><p class="eyebrow">STUDY TOGETHER</p><h2>Gizmo Study Groups</h2><p>Join your class's study group on Gizmo for extra support, daily quizzes and peer learning.</p><div class="scan-note">Scan the QR code<br>to join your year group <span>↗</span></div></div>
   </div>
   <div class="group-grid">
     <a class="group-card year9" href="https://app.gizmo.ai/conversations/01a0c376-2d34-7b4b-8747-0342098dcf8f?isGroup=1&title=Year9" target="_blank" rel="noopener noreferrer">
@@ -103,7 +102,7 @@
   <div class="section-title centered">
     <p class="eyebrow">YOUR STUDY DASHBOARD</p>
     <h2>Study smarter.</h2>
-    <p>Grow a plant and streak, figure out how prepared you are and switch into Candidate Mode when exams come up.</p>
+    <p>Grow a plant and your streak, figure out how prepared you are and switch into Candidate Mode when exams come up.</p>
   </div>
 
   <div class="tools-grid">
@@ -111,6 +110,11 @@
       <div class="tool-heading">
         <div><p class="eyebrow">FOCUS TIMER</p><h3>Grow your study plant 🌱</h3></div>
         <span class="tool-badge" id="timerStatus">Ready</span>
+      </div>
+
+      <div class="session-objective">
+        <label for="sessionObjective">Today's objective</label>
+        <input id="sessionObjective" type="text" maxlength="140" placeholder="e.g. Explain electrolysis without notes">
       </div>
 
       <div class="plant-stage" aria-live="polite">
@@ -155,7 +159,7 @@
       <div class="tool-heading">
         <div><p class="eyebrow">BE HONEST 😭</p>
         <h3>How prepared are you?</h3></div>
-        <span class="tool-badge">Algorithm powered</span>
+        <span class="tool-badge">No judgement</span>
       </div>
       <div class="cooked-controls">
         <label>Year
@@ -173,7 +177,7 @@
             <option>Physics</option>
             <option>English</option>
             <option>ICT / Computing</option>
-            <option>Economics</option>
+            <option>Economics / Business</option>
             <option>Geography</option>
             <option>History</option>
             <option>Languages</option>
@@ -182,20 +186,56 @@
           </select>
         </label>
         <label>Current state
-          <select id="cookedLevel">
-            <option value="1">😎 Very confident</option>
-            <option value="2">🙂 I could use some help</option>
-            <option value="3" selected>🫠 50/50</option>
-            <option value="4">🔥 at least i know something</option>
-            <option value="5">🚨 I KNOW NOTHING</option>
+          <select name="cookedLevel" id="cookedLevel">
+            <option value="1">😎 Prepared</option>
+            <option value="2">🙂 Fairly prepared</option>
+            <option value="3" selected>50 percent chace of passing</option>
+            <option value="4">🔥 I know something</option>
+            <option value="5">🚨 I know little to nothing</option>
           </select>
         </label>
       </div>
       <div id="studyRecommendation" class="recommendation">
         <strong>Today's mission</strong>
-        <p>Choose your situation and HelpMeStudy will build a small, realistic mission.</p>
+        <p>Choose your situation and HelpMeStudy will build a realistic mission.</p>
       </div>
       <button id="makeRecommendation" class="planner-button">Tell me what to study →</button>
+    </article>
+
+    <article class="tool-card mistakes-tool">
+      <div class="tool-heading">
+        <div><p class="eyebrow">LEARN FROM ERRORS</p><h3>Review My Mistakes 🧠</h3></div>
+        <span class="tool-badge" id="mistakeCountBadge">0 saved</span>
+      </div>
+      <p class="tool-hint">Keep the things you got wrong somewhere useful, then come back and prove you can do them.</p>
+      <div class="mistake-form">
+        <input id="mistakeSubject" placeholder="Subject e.g. Chemistry">
+        <input id="mistakeTopic" placeholder="Topic e.g. Electrolysis">
+        <textarea id="mistakeText" rows="2" placeholder="What did you get wrong?"></textarea>
+        <textarea id="mistakeFix" rows="2" placeholder="What is the correct idea / answer?"></textarea>
+        <button id="addMistake" class="planner-button">Save mistake +</button>
+      </div>
+      <div id="mistakeReview" class="mistake-review empty-review">No mistakes saved yet.</div>
+      <div class="mistake-actions"><button id="reviewMistake" class="secondary-button">Review next</button><button id="clearMistakes" class="text-button">Clear all</button></div>
+    </article>
+
+    <article class="tool-card revisit-tool">
+      <div class="tool-heading">
+        <div><p class="eyebrow">COME BACK LATER</p><h3>Topics to Revisit 🔁</h3></div>
+        <span class="tool-badge" id="revisitCountBadge">0 topics</span>
+      </div>
+      <p class="tool-hint">Save topics that still need another pass. When you finally understand one, mark it done.</p>
+      <div class="revisit-form"><input id="revisitSubject" placeholder="Subject"><input id="revisitTopic" placeholder="Topic to revisit"><button id="addRevisit" class="planner-button">Add topic +</button></div>
+      <div id="revisitList" class="revisit-list empty-review">Nothing waiting for you.</div>
+    </article>
+
+    <article class="tool-card achievements-tool">
+      <div class="tool-heading">
+        <div><p class="eyebrow">YOUR PROGRESS</p><h3>Past Achievements 🏛️</h3></div>
+        <span class="tool-badge" id="achievementCountBadge">0 earned</span>
+      </div>
+      <p class="tool-hint">A little space of things you actually accomplished on HelpMeStudy.</p>
+      <div id="achievementList" class="achievement-list empty-review">Your first achievement is waiting.</div>
     </article>
 
     <article class="tool-card candidate-tool">
@@ -203,7 +243,7 @@
         <div><p class="eyebrow">EXAM MODE</p><h3>Candidate Mode 🎓</h3></div>
         <button id="candidateToggle" class="mode-toggle" aria-pressed="false">Off</button>
       </div>
-      <p class="tool-hint">Switch this on when you want HelpMeStudy to feel like exam season. Your settings stay on this device.</p>
+      <p class="tool-hint">Switch this on when you want HelpMeStudy to feel like exam season..</p>
 
       <div class="candidate-controls">
         <label>Candidate year
@@ -216,8 +256,7 @@
           <input id="candidateDate" type="date">
         </label>
       </div>
-
-            <div class="candidate-message-card">
+      <div class="candidate-message-card">
         <div class="candidate-message-icon">🎓</div>
         <div>
           <p class="eyebrow">A message for you</p>
@@ -225,11 +264,9 @@
           <p>Hii guys</p>
           <p>I hope you find this website useful. And your able to succeed in any papers or tests you have coming up!</p>
           <p>IM ROOTING FOR YOU</p>
-          <span>— Amy</span>
-        </div>
+          <span>— Amy</span> </div>
       </div>
-
-<div class="candidate-countdown">
+      <div class="candidate-countdown">
         <div><span id="candidateDays">--</span><small>days left</small></div>
         <div><span id="candidatePercent">0%</span><small>countdown progress</small></div>
       </div>
@@ -256,11 +293,34 @@
   <div class="path"><div><b>1</b><strong>Learn</strong><small>Watch a lesson or read notes.</small></div><i>→</i><div><b>2</b><strong>Practise</strong><small>Try questions and activities.</small></div><i>→</i><div><b>3</b><strong>Test</strong><small>Use quizzes or exam questions.</small></div></div>
 </section>
 
-<section id="about" class="section about"><p class="eyebrow">ABOUT HELPMESTUDY</p><h2>A calmer way through the study internet.</h2><p>HelpMeStudy organises useful KS3 and KS4 materials, gives students a custom revision planner and makes year-group study groups easier to find. External resources open in a new tab, so the original creators keep their own content.</p></section>
+<section id="about" class="section about"><p class="eyebrow">ABOUT HELPMESTUDY</p>
+<h2>A new way through the study internet.</h2>
+<p>HelpMeStudy was made to help students have an easier way to find resources online without getting distracted or going down a rabbit hole of usless study material while helping them stay motivated :)</p></section>
 </main>
 <footer>
-<div><strong>▱ HelpMeStudy</strong><span> Search less study more</span></div>
-<nav>Fill in this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzVDKcnu753m1y88XpEJ9rjvCfGOLAMz-g0YmUA6kwwsYqYg/viewform?usp=header" target="_self">Google Form</a> to help make HelpmeStudy better<a href="#about"></a>.</nav></footer>
+  <div><strong>▱ HelpMeStudy</strong> Search less, Study more</div>
+  <nav>Fill in this<a href="https://docs.google.com/forms/d/e/1FAIpQLSdzVDKcnu753m1y88XpEJ9rjvCfGOLAMz-g0YmUA6kwwsYqYg/viewform?usp=header" target="_self">Google Form</a>to help make HelpmeStudy better<br>
+  </nav>
+</footer>
 <script src="app.js"></script>
+
+<div id="focusOverlay" class="focus-overlay" aria-hidden="true">
+  <div class="focus-top"><span>HELPMESTUDY FOCUS SESSION</span><button id="exitFocus" aria-label="Exit focus session">×</button></div>
+  <div class="focus-center">
+    <p class="eyebrow">YOUR OBJECTIVE</p>
+    <h2 id="focusObjective">Study</h2>
+    <div id="focusTimerDisplay" class="focus-timer-display">25:00</div>
+    <p id="focusStatus">Stay focused. You've got this.</p>
+    <div class="focus-actions"><button id="focusPause" class="focus-secondary">Pause</button><button id="focusReset" class="focus-secondary">Reset</button></div>
+  </div>
+</div>
+<div id="completionModal" class="completion-modal" aria-hidden="true">
+  <div class="completion-card">
+    <p class="eyebrow">SESSION COMPLETE</p><h2>Time's up! ⏰</h2>
+    <p id="completionObjective"></p>
+    <h3>Did you complete your objective?</h3>
+    <div class="completion-actions"><button id="objectiveYes" class="planner-button">Yes, I did ✓</button><button id="objectiveNo" class="secondary-button">Not yet</button></div>
+  </div>
+</div>
 </body>
 </html>

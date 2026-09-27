@@ -148,3 +148,73 @@ body.candidate-mode footer{background:#294452;color:#fff}
 .candidate-message-card p:not(.eyebrow){font-size:.84rem;line-height:1.55;color:#5d746d}
 .candidate-message-card span{display:block;margin-top:8px;font-size:.72rem;font-weight:800;color:#668078}
 @media(max-width:520px){.candidate-message-card{padding:14px}.candidate-message-icon{width:40px;height:40px;flex-basis:40px;font-size:1.2rem}}
+
+/* =========================
+   PERSONAL STUDY MEMORY + FOCUS SESSION
+   ========================= */
+.session-objective{margin:10px 0 14px}
+.session-objective label{display:block;font-size:.76rem;font-weight:800;color:#52716a;margin-bottom:6px}
+.session-objective input,.mistake-form input,.mistake-form textarea,.revisit-form input{width:100%;box-sizing:border-box;border:1px solid #c5d3c5;border-radius:11px;padding:10px 12px;background:#fff;color:#173f3a;font:inherit;resize:vertical}
+.session-objective input:focus,.mistake-form input:focus,.mistake-form textarea:focus,.revisit-form input:focus{outline:2px solid #9bbda5;outline-offset:1px}
+.mistakes-tool{background:linear-gradient(145deg,#f2eef7,#eef4e8)}
+.revisit-tool{background:linear-gradient(145deg,#edf5f3,#f7f1e5)}
+.achievements-tool{background:linear-gradient(145deg,#fff7e8,#edf3e7)}
+.mistake-form{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.mistake-form textarea{grid-column:1/-1}
+.mistake-form .planner-button{grid-column:1/-1}
+.mistake-review{background:#fff;border-radius:15px;padding:15px;border-left:5px solid #7e9f92;min-height:95px}
+.review-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900;color:#668078;margin-bottom:6px}
+.mistake-review strong{display:block;font:500 1.05rem "Fredoka";color:#285f54}
+.mistake-review details{margin-top:10px;font-size:.82rem;color:#536d66}
+.mistake-review details summary{cursor:pointer;font-weight:800;color:#397064}
+.mistake-review details p{margin:7px 0 0}
+.mistake-review small,.achievement-item small,.revisit-item small{display:block;margin-top:9px;color:#758983;font-size:.68rem}
+.empty-review{color:#758983;font-size:.82rem;display:flex;align-items:center;justify-content:center;text-align:center}
+.mistake-actions{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.revisit-form{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:12px}
+.revisit-list{display:flex;flex-direction:column;gap:8px;max-height:185px;overflow:auto}
+.revisit-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;padding:11px 12px;border-radius:13px}
+.revisit-item strong{font:500 1rem "Fredoka";color:#285f54}
+.revisit-item .small-button{white-space:nowrap}
+.achievement-list{display:flex;flex-direction:column;gap:8px;max-height:215px;overflow:auto}
+.achievement-item{display:flex;gap:10px;align-items:center;background:#fff;padding:11px 12px;border-radius:13px}
+.achievement-item>span{font-size:1.45rem}
+.achievement-item strong{font:500 .95rem "Fredoka";color:#285f54}
+
+.focus-lock,.modal-lock{overflow:hidden}
+.focus-overlay{position:fixed;inset:0;z-index:9998;background:radial-gradient(circle at 50% 45%,#f5f4e8 0%,#dcebdc 42%,#183d38 120%);display:none;color:#173f3a}
+.focus-overlay.open{display:block}
+.focus-top{position:absolute;top:0;left:0;right:0;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;font-weight:900;letter-spacing:.12em}
+.focus-top button{border:0;background:rgba(255,255,255,.6);width:42px;height:42px;border-radius:50%;font-size:1.7rem;cursor:pointer;color:#173f3a}
+.focus-center{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}
+.focus-center .eyebrow{margin-bottom:10px}
+.focus-center h2{font:500 clamp(1.8rem,4vw,3.2rem) "Fredoka";max-width:850px;margin:0 auto 25px}
+.focus-timer-display{font:600 clamp(5rem,15vw,11rem)/.9 "Fredoka";letter-spacing:.03em;color:#285f54}
+.focus-center p:not(.eyebrow){color:#607871;margin:20px 0;font-size:1rem}
+.focus-actions{display:flex;gap:10px;margin-top:8px}
+.focus-secondary{border:0;border-radius:12px;padding:11px 18px;background:rgba(255,255,255,.7);color:#285f54;font-weight:800;cursor:pointer}
+.completion-modal{position:fixed;inset:0;z-index:10000;background:rgba(23,63,58,.62);display:none;align-items:center;justify-content:center;padding:20px}
+.completion-modal.open{display:flex}
+.completion-card{width:min(520px,100%);background:#fff;border-radius:28px;padding:32px;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,.2)}
+.completion-card h2{font:500 2.2rem "Fredoka";color:#285f54;margin:4px 0 10px}
+.completion-card>p:not(.eyebrow){color:#61766f}
+.completion-card h3{font:500 1.15rem "Fredoka";color:#285f54;margin:24px 0 15px}
+.completion-actions{display:flex;gap:10px;justify-content:center}
+.dark .session-objective label{color:#b5c9c0}
+.dark .session-objective input,.dark .mistake-form input,.dark .mistake-form textarea,.dark .revisit-form input,.dark .mistake-review,.dark .revisit-item,.dark .achievement-item{background:#162923;color:#edf6ed;border-color:#38564e}
+.dark .mistakes-tool,.dark .revisit-tool,.dark .achievements-tool{background:#203832}
+.dark .mistake-review strong,.dark .revisit-item strong,.dark .achievement-item strong,.dark .completion-card h2,.dark .completion-card h3{color:#bfe0cb}
+.dark .focus-overlay{background:radial-gradient(circle at 50% 45%,#294b43,#102a26 120%);color:#edf6ed}
+.dark .focus-timer-display{color:#bfe0cb}
+.dark .focus-center p:not(.eyebrow){color:#b5c9c0}
+.dark .completion-card{background:#1c302c;color:#edf6ed}
+.dark .completion-card>p:not(.eyebrow){color:#b5c9c0}
+.dark .focus-top button,.dark .focus-secondary{background:#d9e9e2;color:#173f3a}
+@media(max-width:700px){
+  .mistake-form,.revisit-form{grid-template-columns:1fr}
+  .mistake-form textarea{grid-column:auto}
+  .mistake-form .planner-button{grid-column:auto}
+  .revisit-item{align-items:flex-start;flex-direction:column}
+  .completion-actions{flex-direction:column}
+  .focus-top{padding:16px}
+}

@@ -1,4 +1,11 @@
 const resources=[
+
+{level:"KS4",subject:"Maths",topic:"Maths Practice",type:"Practice",icon:"❄️",title:"Dr Frost Maths",desc:"Interactive maths practice, worked examples, exam questions and topic practice for students.",url:"https://www.drfrost.org/students"},
+{level:"GENERAL",subject:"Mandarin",topic:"Chinese Dictionary",type:"General Site",icon:"中",title:"MDBG Chinese Dictionary",desc:"Look up Chinese words, characters, Pinyin and English definitions, with useful Chinese-learning tools.",url:"https://www.mdbg.net/chinese/dictionary"},
+{level:"KS4",subject:"French",topic:"French Revision",type:"Lessons",icon:"🇫🇷",title:"BBC Bitesize: French",desc:"BBC Bitesize French learning and revision resources for secondary students.",url:"https://www.bbc.co.uk/bitesize/subjects/z9d2t39"},
+{level:"KS4",subject:"All Subjects",topic:"Revision Notes",type:"Notes",icon:"🗒️",title:"ZNotes",desc:"Student-made revision notes, videos and quizzes across Cambridge and other exam boards.",url:"https://www.znotes.org/"},
+{level:"KS4",subject:"Economics",topic:"Economics Revision",type:"Video",icon:"▶️",title:"Mr Lee - Business Econ",desc:"IGCSE Economics video lessons and revision content from Mr Lee.",url:"https://www.youtube.com/watch?v=Nvy1sEKrtYU"},
+
 {level:"GENERAL",subject:"General",topic:"General Study",type:"General Site",icon:"🤖",title:"Gizmo",tag:"AI Learning",tagClass:"ai",desc:"AI-powered quizzes, flashcards and an AI Tutor to help you learn and practise.",url:"https://gizmo.ai/"},
 {level:"GENERAL",subject:"General",topic:"Exam Revision",type:"General Site",icon:"📚",title:"Save My Exams",desc:"Revision notes, exam questions, past papers, flashcards and other exam-prep resources.",url:"https://www.savemyexams.com/"},
 {level:"GENERAL",subject:"General",topic:"Cambridge Exams",type:"General Site",icon:"📝",title:"PapaCambridge",desc:"Cambridge exam resources including past papers, mark schemes, syllabuses and practice materials.",url:"https://pastpapers.papacambridge.com/"},
@@ -69,7 +76,11 @@ makeTimetable.addEventListener("click",makePlan);
     candidateOn:false,
     candidateYear:"11",
     candidateDate:"",
-    candidateStartDate:""
+    candidateStartDate:"",
+    sessionObjective:"",
+    mistakes:[],
+    revisitTopics:[],
+    achievements:[]
   };
 
   let state={...defaultState};
@@ -85,7 +96,10 @@ makeTimetable.addEventListener("click",makePlan);
   const timerStatus=$("timerStatus");
   const streakCount=$("streakCount");
   const streakMessage=$("streakMessage");
+  const focusOverlay=$("focusOverlay");
+  const completionModal=$("completionModal");
   let timerInterval=null;
+  let currentReviewIndex=0;
 
   function save(){
     localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
@@ -100,6 +114,87 @@ makeTimetable.addEventListener("click",makePlan);
     const d=new Date(dateKeyValue+"T12:00:00");
     d.setDate(d.getDate()+amount);
     return dateKey(d);
+  }
+
+  function escapeHTML(value){
+    return String(value||"").replace(/[&<>'"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
+  }
+
+  function addAchievement(title,detail,icon="🏆"){
+    const exists=(state.achievements||[]).some(a=>a.title===title);
+    if(exists)return;
+    state.achievements=[...(state.achievements||[]),{title,detail,icon,date:dateKey()}];
+    save();
+    renderAchievements();
+  }
+
+  function renderAchievements(){
+    const list=$("achievementList"), badge=$("achievementCountBadge");
+    if(!list)return;
+    const items=state.achievements||[];
+    badge.textContent=`${items.length} earned`;
+    list.classList.toggle("empty-review",!items.length);
+    list.innerHTML=items.length?items.slice().reverse().map(a=>`<div class="achievement-item"><span>${a.icon}</span><div><strong>${escapeHTML(a.title)}</strong><small>${escapeHTML(a.detail)} · ${a.date}</small></div></div>`).join(""):"Your first achievement is waiting.";
+  }
+
+  function renderMistakes(){
+    const badge=$("mistakeCountBadge"),box=$("mistakeReview");
+    if(!box)return;
+    const items=state.mistakes||[];
+    badge.textContent=`${items.length} saved`;
+    if(!items.length){box.className="mistake-review empty-review";box.textContent="No mistakes saved yet.";return;}
+    currentReviewIndex=Math.min(currentReviewIndex,items.length-1);
+    const m=items[currentReviewIndex];
+    box.className="mistake-review";
+    box.innerHTML=`<div class="review-label">${escapeHTML(m.subject)} · ${escapeHTML(m.topic)}</div><strong>${escapeHTML(m.mistake)}</strong><details><summary>Reveal the fix</summary><p>${escapeHTML(m.fix)}</p></details><small>Saved ${m.date}</small>`;
+  }
+
+  function renderRevisit(){
+    const badge=$("revisitCountBadge"),list=$("revisitList");
+    if(!list)return;
+    const items=state.revisitTopics||[];
+    badge.textContent=`${items.length} topic${items.length===1?"":"s"}`;
+    list.classList.toggle("empty-review",!items.length);
+    list.innerHTML=items.length?items.map((x,i)=>`<div class="revisit-item"><div><strong>${escapeHTML(x.topic)}</strong><small>${escapeHTML(x.subject)}</small></div><button data-revisit-done="${i}" class="small-button">Understood ✓</button></div>`).join(""):"Nothing waiting for you.";
+    list.querySelectorAll("[data-revisit-done]").forEach(btn=>btn.addEventListener("click",()=>{
+      const i=Number(btn.dataset.revisitDone),item=state.revisitTopics[i];
+      state.revisitTopics.splice(i,1); save(); renderRevisit();
+      addAchievement(`Mastered ${item.topic}`,`${item.subject} topic marked understood`,"🧠");
+    }));
+  }
+
+  function openFocus(){
+    const objective=$("sessionObjective").value.trim();
+    if(!objective){
+      $("sessionObjective").focus();
+      timerMessage.textContent="Give this session one clear objective before you start.";
+      return false;
+    }
+    state.sessionObjective=objective;
+    $("focusObjective").textContent=objective;
+    $("focusOverlay").classList.add("open");
+    $("focusOverlay").setAttribute("aria-hidden","false");
+    document.body.classList.add("focus-lock");
+    return true;
+  }
+
+  function closeFocus(){
+    $("focusOverlay").classList.remove("open");
+    $("focusOverlay").setAttribute("aria-hidden","true");
+    document.body.classList.remove("focus-lock");
+  }
+
+  function showCompletion(){
+    $("completionObjective").textContent=`Your objective: “${state.sessionObjective||"Study"}”`;
+    $("completionModal").classList.add("open");
+    $("completionModal").setAttribute("aria-hidden","false");
+    document.body.classList.add("modal-lock");
+  }
+
+  function hideCompletion(){
+    $("completionModal").classList.remove("open");
+    $("completionModal").setAttribute("aria-hidden","true");
+    document.body.classList.remove("modal-lock");
   }
 
   function refreshStreak(){
@@ -131,6 +226,7 @@ makeTimetable.addEventListener("click",makePlan);
     state.studyDates=[...(state.studyDates||[]),today];
     save();
     refreshStreak();
+    if(state.streak>=7) addAchievement("7-day study streak",`${state.streak} day streak reached`,"🔥");
   }
 
   function renderWeek(){
@@ -171,7 +267,9 @@ makeTimetable.addEventListener("click",makePlan);
   function renderTimer(){
     const mins=Math.floor(state.timerRemaining/60);
     const secs=state.timerRemaining%60;
-    timerDisplay.textContent=`${String(mins).padStart(2,"0")}:${String(secs).padStart(2,"0")}`;
+    const timeText=`${String(mins).padStart(2,"0")}:${String(secs).padStart(2,"0")}`;
+    timerDisplay.textContent=timeText;
+    if($("focusTimerDisplay")) $("focusTimerDisplay").textContent=timeText;
     setPlantStage();
 
     if(state.timerRunning){
@@ -209,6 +307,8 @@ makeTimetable.addEventListener("click",makePlan);
         timerStatus.textContent="Grown! 🌳";
         timerMessage.textContent="You finished your session. Your plant grew up! 🌳✨";
         recordStudySession();
+        closeFocus();
+        showCompletion();
         return;
       }
       if(state.timerRemaining%5===0)save();
@@ -251,15 +351,31 @@ makeTimetable.addEventListener("click",makePlan);
       save();
       renderTimer();
       $("startTimer").textContent="Continue growing 🌱";
+      $("focusPause").textContent="Resume";
     }else{
-      startTimer();
-      $("startTimer").textContent="Pause";
+      if(openFocus()){
+        startTimer();
+        $("startTimer").textContent="Pause";
+        $("focusPause").textContent="Pause";
+      }
     }
   });
 
+  $("focusPause").addEventListener("click",()=>{
+    if(state.timerRunning){
+      stopInterval(); state.timerRunning=false; save(); renderTimer(); $("focusPause").textContent="Resume"; $("focusStatus").textContent="Paused. Come back when you're ready.";
+    }else{
+      startTimer(); $("focusPause").textContent="Pause"; $("focusStatus").textContent="Stay focused. You've got this.";
+    }
+  });
+  $("focusReset").addEventListener("click",()=>{
+    resetTimer(); $("focusPause").textContent="Pause"; $("focusStatus").textContent="Timer reset. Ready when you are.";
+  });
+  $("exitFocus").addEventListener("click",()=>{stopInterval();state.timerRunning=false;save();renderTimer();closeFocus();$("startTimer").textContent="Start session 🎯";});
+
   $("resetTimer").addEventListener("click",()=>{
     resetTimer();
-    $("startTimer").textContent="Start growing 🌱";
+    $("startTimer").textContent="Start session 🎯";
   });
 
   $("resetStreak").addEventListener("click",()=>{
@@ -270,6 +386,47 @@ makeTimetable.addEventListener("click",makePlan);
       save();
       refreshStreak();
     }
+  });
+
+  $("objectiveYes").addEventListener("click",()=>{
+    hideCompletion();
+    const objective=state.sessionObjective||"Focus session";
+    addAchievement(`Completed: ${objective}`,"Timed focus objective completed","🎯");
+    if(!(state.achievements||[]).some(a=>a.title==="First focus objective complete")) addAchievement("First focus objective complete","You finished your first timed objective","🌟");
+    $("timerMessage").textContent="Objective complete. Nice work. 🎯";
+    state.sessionObjective=""; $("sessionObjective").value=""; save();
+  });
+  $("objectiveNo").addEventListener("click",()=>{
+    hideCompletion();
+    const objective=state.sessionObjective||"This session";
+    const topic=objective.length>55?objective.slice(0,55)+"…":objective;
+    const exists=(state.revisitTopics||[]).some(x=>x.topic.toLowerCase()===topic.toLowerCase());
+    if(!exists) state.revisitTopics=[...(state.revisitTopics||[]),{subject:"Focus objective",topic,date:dateKey()}];
+    save(); renderRevisit();
+    $("timerMessage").textContent="Saved to Topics to Revisit. You can come back to it.";
+    state.sessionObjective=""; $("sessionObjective").value=""; save();
+  });
+
+  $("addMistake").addEventListener("click",()=>{
+    const subject=$("mistakeSubject").value.trim(),topic=$("mistakeTopic").value.trim(),mistake=$("mistakeText").value.trim(),fix=$("mistakeFix").value.trim();
+    if(!subject||!topic||!mistake||!fix){$("mistakeText").focus();return;}
+    state.mistakes=[...(state.mistakes||[]),{subject,topic,mistake,fix,date:dateKey()}];
+    save(); renderMistakes(); addAchievement("Saved my first mistake",`${subject} · ${topic}`,"🧠");
+    ["mistakeSubject","mistakeTopic","mistakeText","mistakeFix"].forEach(id=>$(id).value="");
+  });
+  $("reviewMistake").addEventListener("click",()=>{
+    if(!(state.mistakes||[]).length)return;
+    currentReviewIndex=(currentReviewIndex+1)%state.mistakes.length; renderMistakes();
+  });
+  $("clearMistakes").addEventListener("click",()=>{
+    if((state.mistakes||[]).length && confirm("Clear your saved mistakes?")){state.mistakes=[];save();renderMistakes();}
+  });
+  $("addRevisit").addEventListener("click",()=>{
+    const subject=$("revisitSubject").value.trim(),topic=$("revisitTopic").value.trim();
+    if(!subject||!topic){$("revisitTopic").focus();return;}
+    state.revisitTopics=[...(state.revisitTopics||[]),{subject,topic,date:dateKey()}];
+    save();renderRevisit();
+    $("revisitSubject").value="";$("revisitTopic").value="";
   });
 
   function makeCookedRecommendation(){
@@ -388,6 +545,11 @@ makeTimetable.addEventListener("click",makePlan);
   $("candidateDate").value=state.candidateDate;
   applyCandidateMode();
 
+  $("sessionObjective").value=state.sessionObjective||"";
+  $("startTimer").textContent="Start session 🎯";
+  renderMistakes();
+  renderRevisit();
+  renderAchievements();
   refreshStreak();
   renderTimer();
   updateCandidate();
