@@ -303,6 +303,25 @@
   <nav>Fill in this<a href="https://docs.google.com/forms/d/e/1FAIpQLSdzVDKcnu753m1y88XpEJ9rjvCfGOLAMz-g0YmUA6kwwsYqYg/viewform?usp=header" target="_self">Google Form</a>to help make HelpmeStudy better<br>
   </nav>
 </footer>
+  <aside id="pandaCompanion" class="panda-companion" aria-label="HelpMeStudy panda companion">
+  <button id="pandaBubble" class="panda-bubble" type="button" aria-expanded="false">
+    <span class="panda-face-wrap"><img src="panda.webp" width="180" height="180" loading="eager" decoding="async" alt="HelpMeStudy panda"></span>
+    <span class="panda-copy">
+      <strong id="pandaTitle">Panda study buddy 🐼</strong>
+      <span id="pandaMessage">Pick a resource, study there, then come back for bamboo.</span>
+    </span>
+    <span class="panda-bamboo"><span>🎋</span><b id="bambooCount">0</b></span>
+  </button>
+  <div class="panda-panel" id="pandaPanel" aria-hidden="true">
+    <div class="panda-panel-head">
+      <div><span class="eyebrow">YOUR STUDY BUDDY</span><h3>Go study out there. 🐼🎋</h3></div>
+      <button id="pandaClose" class="panda-close" type="button" aria-label="Close panda panel">×</button>
+    </div>
+    <p id="pandaPanelText">HelpMeStudy is your launchpad, not the place to spend the whole session. Choose a resource and go learn there.</p>
+    <a id="pandaResourceLink" class="panda-resource-link" href="https://cognito.org/" target="_blank" rel="noopener noreferrer">🚀 Open Cognito</a>
+    <div class="panda-stats"><span>🎋 Bamboo</span><strong id="pandaPanelBamboo">0</strong><span>completed sessions</span><strong id="pandaSessions">0</strong></div>
+  </div>
+</aside>
 <div id="focusOverlay" class="focus-overlay" aria-hidden="true">
   <div class="focus-top"><span>HELPMESTUDY FOCUS SESSION</span><button id="exitFocus" aria-label="Exit focus session">×</button></div>
   <div class="focus-center">
