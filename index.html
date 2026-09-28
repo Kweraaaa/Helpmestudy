@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="topbar">
@@ -71,13 +71,13 @@
   </div>
   <div class="group-grid">
     <a class="group-card year9" href="https://app.gizmo.ai/conversations/01a0c376-2d34-7b4b-8747-0342098dcf8f?isGroup=1&title=Year9" target="_blank" rel="noopener noreferrer">
-      <div class="qr-wrap"><img src="year9.png" alt="Year 9 Gizmo study group QR code"></div><h3>Year 9</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
+      <div class="qr-wrap"><img src="year9.png" loading="lazy" decoding="async" alt="Year 9 Gizmo study group QR code"></div><h3>Year 9</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
     </a>
     <a class="group-card year10" href="https://app.gizmo.ai/conversations/01a0c378-5341-7baf-a4b7-020e00f71e6f?isGroup=1&title=Year10" target="_blank" rel="noopener noreferrer">
-      <div class="qr-wrap"><img src="year10.png" alt="Year 10 Gizmo study group QR code"></div><h3>Year 10</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
+      <div class="qr-wrap"><img src="year10.png" loading="lazy" decoding="async" alt="Year 10 Gizmo study group QR code"></div><h3>Year 10</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
     </a>
     <a class="group-card year11" href="https://app.gizmo.ai/conversations/01a0c37a-8c5b-7c1a-ae07-88a6f29062a8?isGroup=1&title=Year11" target="_blank" rel="noopener noreferrer">
-      <div class="qr-wrap"><img src="year11.png" alt="Year 11 Gizmo study group QR code"></div><h3>Year 11</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
+      <div class="qr-wrap"><img src="year11.png" loading="lazy" decoding="async" alt="Year 11 Gizmo study group QR code" onerror="this.hidden=true;this.parentElement.classList.add('qr-missing')"></div><h3>Year 11</h3><p>Scan to join this study group</p><span>Open Gizmo ↗</span>
     </a>
   </div>
 </section>
@@ -116,6 +116,21 @@
       <div class="session-objective">
         <label for="sessionObjective">Today's objective</label>
         <input id="sessionObjective" type="text" maxlength="140" placeholder="e.g. Explain electrolysis without notes">
+      </div>
+
+      <div class="session-resource">
+        <label for="sessionResource">Where are you studying?</label>
+        <select id="sessionResource" aria-label="Choose the study resource">
+          <option value="cognito">🧠 Cognito</option>
+          <option value="dfrost">❄️ Dr Frost Maths</option>
+          <option value="znotes">🗒️ ZNotes</option>
+          <option value="mdbg">中 MDBG Dictionary</option>
+          <option value="bbcFrench">🇫🇷 BBC Bitesize French</option>
+          <option value="mrLee">▶️ Mr Lee Economics</option>
+          <option value="saveMyExams">📚 Save My Exams</option>
+          <option value="papaCambridge">📝 PapaCambridge</option>
+          <option value="gizmo">🤖 Gizmo</option>
+        </select>
       </div>
 
       <div class="plant-stage" aria-live="polite">
@@ -190,7 +205,7 @@
           <select name="cookedLevel" id="cookedLevel">
             <option value="1">😎 Prepared</option>
             <option value="2">🙂 Fairly prepared</option>
-            <option value="3" selected>50 percent chace of passing</option>
+            <option value="3" selected>😵 50% chance of passing</option>
             <option value="4">🔥 I know something</option>
             <option value="5">🚨 I know little to nothing</option>
           </select>
@@ -235,7 +250,7 @@
         <div><p class="eyebrow">YOUR PROGRESS</p><h3>Past Achievements 🏛️</h3></div>
         <span class="tool-badge" id="achievementCountBadge">0 earned</span>
       </div>
-      <p class="tool-hint">A little space of things you  accomplished on HelpMeStudy.</p>
+      <p class="tool-hint">A little space of things you accomplished on HelpMeStudy.</p>
       <div id="achievementList" class="achievement-list empty-review">Your first achievement is waiting.</div>
     </article>
 
@@ -263,7 +278,7 @@
           <p class="eyebrow">A message for you</p>
           <h4>&nbsp;</h4>
           <p>Hii guys</p>
-          <p>I hope you find this website useful. And your able to succeed in any papers or tests you have coming up!</p>
+          <p>I hope you find this website useful. And you're able to succeed in any papers or tests you have coming up!</p>
           <p>IM ROOTING FOR YOU</p>
           <span>— Amy</span></div>
       </div>
@@ -296,7 +311,7 @@
 <section id="about" class="section about">
   <p class="eyebrow">ABOUT HELPMESTUDY</p>
   <h2>A new way through the study internet.</h2>
-  <p>HelpMeStudy was made to help students have an easier way to find resources online without getting distracted or going down a rabbit hole of usless study material while helping them stay motivated :)</p>
+  <p>HelpMeStudy was made to help students have an easier way to find resources online without getting distracted or going down a rabbit hole of useless study material while helping them stay motivated :)</p>
 </section>
 </main>
 <footer>
@@ -304,7 +319,7 @@
   <nav>Fill in this<a href="https://docs.google.com/forms/d/e/1FAIpQLSdzVDKcnu753m1y88XpEJ9rjvCfGOLAMz-g0YmUA6kwwsYqYg/viewform?usp=header" target="_self">Google Form</a>to help make HelpmeStudy better<br>
   </nav>
 </footer>
-  <aside id="pandaCompanion" class="panda-companion" aria-label="HelpMeStudy panda companion">
+<aside id="pandaCompanion" class="panda-companion" aria-label="HelpMeStudy panda companion">
   <button id="pandaBubble" class="panda-bubble" type="button" aria-expanded="false">
     <span class="panda-face-wrap"><img src="panda.webp" width="180" height="180" loading="eager" decoding="async" alt="HelpMeStudy panda"></span>
     <span class="panda-copy">
@@ -323,6 +338,7 @@
     <div class="panda-stats"><span>🎋 Bamboo</span><strong id="pandaPanelBamboo">0</strong><span>completed sessions</span><strong id="pandaSessions">0</strong></div>
   </div>
 </aside>
+
 <div id="focusOverlay" class="focus-overlay" aria-hidden="true">
   <div class="focus-top"><span>HELPMESTUDY FOCUS SESSION</span><button id="exitFocus" aria-label="Exit focus session">×</button></div>
   <div class="focus-center">
@@ -341,6 +357,7 @@
     <div class="completion-actions"><button id="objectiveYes" class="planner-button">Yes, I did ✓</button><button id="objectiveNo" class="secondary-button">Not yet</button></div>
   </div>
 </div>
-<script src="app.js"></script>
+<script src="app.js?v=3" defer></script>
 </body>
 </html>
+
