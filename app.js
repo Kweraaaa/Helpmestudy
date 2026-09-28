@@ -1,24 +1,24 @@
 const resources=[
 
-{level:"KS4",subject:"Maths",topic:"Maths Practice",type:"Practice",icon:"â„ï¸",title:"Dr Frost Maths",desc:"Interactive maths practice, worked examples, exam questions and topic practice for students.",url:"https://www.drfrost.org/students"},
-{level:"GENERAL",subject:"Mandarin",topic:"Chinese Dictionary",type:"General Site",icon:"ä¸­",title:"MDBG Chinese Dictionary",desc:"Look up Chinese words, characters, Pinyin and English definitions, with useful Chinese-learning tools.",url:"https://www.mdbg.net/chinese/dictionary"},
-{level:"KS4",subject:"French",topic:"French Revision",type:"Lessons",icon:"ðŸ‡«ðŸ‡·",title:"BBC Bitesize: French",desc:"BBC Bitesize French learning and revision resources for secondary students.",url:"https://www.bbc.co.uk/bitesize/subjects/z9d2t39"},
-{level:"KS4",subject:"All Subjects",topic:"Revision Notes",type:"Notes",icon:"ðŸ—’ï¸",title:"ZNotes",desc:"Student-made revision notes, videos and quizzes across Cambridge and other exam boards.",url:"https://www.znotes.org/"},
-{level:"KS4",subject:"Economics",topic:"Economics Revision",type:"Video",icon:"â–¶ï¸",title:"Mr Lee - Business Econ",desc:"IGCSE Economics video lessons and revision content from Mr Lee.",url:"https://www.youtube.com/watch?v=Nvy1sEKrtYU"},
+{level:"KS4",subject:"Maths",topic:"Maths Practice",type:"Practice",icon:"❄️",title:"Dr Frost Maths",desc:"Interactive maths practice, worked examples, exam questions and topic practice for students.",url:"https://www.drfrost.org/students"},
+{level:"GENERAL",subject:"Mandarin",topic:"Chinese Dictionary",type:"General Site",icon:"中",title:"MDBG Chinese Dictionary",desc:"Look up Chinese words, characters, Pinyin and English definitions, with useful Chinese-learning tools.",url:"https://www.mdbg.net/chinese/dictionary"},
+{level:"KS4",subject:"French",topic:"French Revision",type:"Lessons",icon:"🇫🇷",title:"BBC Bitesize: French",desc:"BBC Bitesize French learning and revision resources for secondary students.",url:"https://www.bbc.co.uk/bitesize/subjects/z9d2t39"},
+{level:"KS4",subject:"All Subjects",topic:"Revision Notes",type:"Notes",icon:"🗒️",title:"ZNotes",desc:"Student-made revision notes, videos and quizzes across Cambridge and other exam boards.",url:"https://www.znotes.org/"},
+{level:"KS4",subject:"Economics",topic:"Economics Revision",type:"Video",icon:"▶️",title:"Mr Lee - Business Econ",desc:"IGCSE Economics video lessons and revision content from Mr Lee.",url:"https://www.youtube.com/watch?v=Nvy1sEKrtYU"},
 
-{level:"GENERAL",subject:"General",topic:"General Study",type:"General Site",icon:"ðŸ¤–",title:"Gizmo",tag:"AI Learning",tagClass:"ai",desc:"AI-powered quizzes, flashcards and an AI Tutor to help you learn and practise.",url:"https://gizmo.ai/"},
-{level:"GENERAL",subject:"General",topic:"Exam Revision",type:"General Site",icon:"ðŸ“š",title:"Save My Exams",desc:"Revision notes, exam questions, past papers, flashcards and other exam-prep resources.",url:"https://www.savemyexams.com/"},
-{level:"GENERAL",subject:"General",topic:"Cambridge Exams",type:"General Site",icon:"ðŸ“",title:"PapaCambridge",desc:"Cambridge exam resources including past papers, mark schemes, syllabuses and practice materials.",url:"https://pastpapers.papacambridge.com/"},
-{level:"GENERAL",subject:"General",topic:"Learning & Revision",type:"General Site",icon:"ðŸ§ ",title:"Cognito",desc:"Video lessons, notes, quizzes, flashcards and exam-style practice for KS3, GCSE and more.",url:"https://cognito.org/"},
-{level:"KS3",subject:"Maths",topic:"Algebra",type:"Video",icon:"ðŸŽ¥",title:"Cognito: KS3 Maths",desc:"Explore Cognito's KS3 maths course and choose topics to study.",url:"https://cognito.org/courses"},
-{level:"KS3",subject:"Science",topic:"Science",type:"Lessons",icon:"ðŸ§ª",title:"Oak: KS3 Science",desc:"Sequenced science lessons covering biology, chemistry and physics.",url:"https://www.thenational.academy/teachers/programmes/science-secondary-aqa/units?keystages=ks3"},
-{level:"KS3",subject:"All Subjects",topic:"Revision",type:"Lessons",icon:"ðŸ“š",title:"Cognito: KS3 Courses",desc:"Browse Cognito's KS3 courses and learning materials.",url:"https://cognito.org/courses"},
-{level:"KS4",subject:"Maths",topic:"Maths",type:"Video",icon:"ðŸ§®",title:"Cognito: GCSE Maths",desc:"GCSE Maths courses organised by exam board, including CIE and Edexcel International.",url:"https://cognito.org/courses/gcse/maths"},
-{level:"KS4",subject:"Biology",topic:"Biology",type:"Video",icon:"ðŸ§¬",title:"Cognito: GCSE Biology",desc:"GCSE Biology lessons and revision resources organised by exam board.",url:"https://www.cognito.org/courses/gcse/biology"},
-{level:"KS4",subject:"Science",topic:"Science",type:"Lessons",icon:"ðŸ”¬",title:"Oak: Secondary Science",desc:"Free curriculum resources for secondary science.",url:"https://www.thenational.academy/"},
-{level:"KS4",subject:"All Subjects",topic:"Revision",type:"Quizzes",icon:"ðŸ§ ",title:"Cognito: GCSE Revision",desc:"Videos, quizzes, flashcards, exam questions and past papers across many GCSE subjects.",url:"https://go.cognitoedu.org/gcse"},
-{level:"KS4",subject:"Maths",topic:"Exam Practice",type:"Past Papers",icon:"ðŸ“",title:"Cognito: GCSE Past Papers",desc:"Past papers organised by subject and exam board, including Cambridge IGCSE.",url:"https://go.cognitoedu.org/gcse-pastpapers"},
-{level:"KS4",subject:"English",topic:"English",type:"Lessons",icon:"ðŸ“–",title:"Cognito: English Courses",desc:"Browse available GCSE English learning resources.",url:"https://cognito.org/courses/gcse/english-language"}
+{level:"GENERAL",subject:"General",topic:"General Study",type:"General Site",icon:"🤖",title:"Gizmo",tag:"AI Learning",tagClass:"ai",desc:"AI-powered quizzes, flashcards and an AI Tutor to help you learn and practise.",url:"https://gizmo.ai/"},
+{level:"GENERAL",subject:"General",topic:"Exam Revision",type:"General Site",icon:"📚",title:"Save My Exams",desc:"Revision notes, exam questions, past papers, flashcards and other exam-prep resources.",url:"https://www.savemyexams.com/"},
+{level:"GENERAL",subject:"General",topic:"Cambridge Exams",type:"General Site",icon:"📝",title:"PapaCambridge",desc:"Cambridge exam resources including past papers, mark schemes, syllabuses and practice materials.",url:"https://pastpapers.papacambridge.com/"},
+{level:"GENERAL",subject:"General",topic:"Learning & Revision",type:"General Site",icon:"🧠",title:"Cognito",desc:"Video lessons, notes, quizzes, flashcards and exam-style practice for KS3, GCSE and more.",url:"https://cognito.org/"},
+{level:"KS3",subject:"Maths",topic:"Algebra",type:"Video",icon:"🎥",title:"Cognito: KS3 Maths",desc:"Explore Cognito's KS3 maths course and choose topics to study.",url:"https://cognito.org/courses"},
+{level:"KS3",subject:"Science",topic:"Science",type:"Lessons",icon:"🧪",title:"Oak: KS3 Science",desc:"Sequenced science lessons covering biology, chemistry and physics.",url:"https://www.thenational.academy/teachers/programmes/science-secondary-aqa/units?keystages=ks3"},
+{level:"KS3",subject:"All Subjects",topic:"Revision",type:"Lessons",icon:"📚",title:"Cognito: KS3 Courses",desc:"Browse Cognito's KS3 courses and learning materials.",url:"https://cognito.org/courses"},
+{level:"KS4",subject:"Maths",topic:"Maths",type:"Video",icon:"🧮",title:"Cognito: GCSE Maths",desc:"GCSE Maths courses organised by exam board, including CIE and Edexcel International.",url:"https://cognito.org/courses/gcse/maths"},
+{level:"KS4",subject:"Biology",topic:"Biology",type:"Video",icon:"🧬",title:"Cognito: GCSE Biology",desc:"GCSE Biology lessons and revision resources organised by exam board.",url:"https://www.cognito.org/courses/gcse/biology"},
+{level:"KS4",subject:"Science",topic:"Science",type:"Lessons",icon:"🔬",title:"Oak: Secondary Science",desc:"Free curriculum resources for secondary science.",url:"https://www.thenational.academy/"},
+{level:"KS4",subject:"All Subjects",topic:"Revision",type:"Quizzes",icon:"🧠",title:"Cognito: GCSE Revision",desc:"Videos, quizzes, flashcards, exam questions and past papers across many GCSE subjects.",url:"https://go.cognitoedu.org/gcse"},
+{level:"KS4",subject:"Maths",topic:"Exam Practice",type:"Past Papers",icon:"📝",title:"Cognito: GCSE Past Papers",desc:"Past papers organised by subject and exam board, including Cambridge IGCSE.",url:"https://go.cognitoedu.org/gcse-pastpapers"},
+{level:"KS4",subject:"English",topic:"English",type:"Lessons",icon:"📖",title:"Cognito: English Courses",desc:"Browse available GCSE English learning resources.",url:"https://cognito.org/courses/gcse/english-language"}
 ];
 
 const cards=document.getElementById("cards"),empty=document.getElementById("empty"),level=document.getElementById("levelFilter"),subject=document.getElementById("subjectFilter"),type=document.getElementById("typeFilter"),search=document.getElementById("search"),heroSearch=document.getElementById("heroSearch");
@@ -29,7 +29,7 @@ subjects.forEach(s=>subject.insertAdjacentHTML("beforeend",`<option>${s}</option
 function render(){
  const q=search.value.trim().toLowerCase(),l=level.value,s=subject.value,t=type.value;
  const filtered=resources.filter(r=>(l==="ALL"||r.level===l)&&(s==="ALL"||r.subject===s)&&(t==="ALL"||r.type===t)&&r._search.includes(q));
- cards.innerHTML=filtered.map(r=>`<article class="resource-card"><span class="icon">${r.icon}</span><span class="meta">${r.level === "GENERAL" ? "GENERAL SITE" : r.level + " Â· " + r.subject + " Â· " + r.type}</span>${r.tag ? `<span class="tag ${r.tagClass || ""}">${r.tag}</span>` : ""}<h3>${r.title}</h3><p>${r.desc}</p><a href="${r.url}" target="_blank" rel="noopener noreferrer">Open resource â†’</a></article>`).join("");
+ cards.innerHTML=filtered.map(r=>`<article class="resource-card"><span class="icon">${r.icon}</span><span class="meta">${r.level === "GENERAL" ? "GENERAL SITE" : r.level + " · " + r.subject + " · " + r.type}</span>${r.tag ? `<span class="tag ${r.tagClass || ""}">${r.tag}</span>` : ""}<h3>${r.title}</h3><p>${r.desc}</p><a href="${r.url}" target="_blank" rel="noopener noreferrer">Open resource →</a></article>`).join("");
  empty.style.display=filtered.length?"none":"block";
 }
 [level,subject,type].forEach(x=>x.addEventListener("change",render));
@@ -40,7 +40,7 @@ search.addEventListener("input",()=>{
 });
 document.getElementById("clear").onclick=()=>{level.value="ALL";subject.value="ALL";type.value="ALL";search.value="";heroSearch.value="";render()};
 document.querySelectorAll(".level").forEach(btn=>btn.onclick=()=>{level.value=btn.dataset.level;document.getElementById("subjects").scrollIntoView({behavior:"smooth"});render()});
-document.getElementById("theme").onclick=()=>{document.body.classList.toggle("dark");document.getElementById("theme").textContent=document.body.classList.contains("dark")?"â˜€":"â˜¾"};
+document.getElementById("theme").onclick=()=>{document.body.classList.toggle("dark");document.getElementById("theme").textContent=document.body.classList.contains("dark")?"☀":"☾"};
 function doSearch(value){search.value=value.trim();render();document.getElementById("subjects").scrollIntoView({behavior:"smooth"})}
 document.getElementById("heroSearchButton").onclick=()=>doSearch(heroSearch.value);
 heroSearch.addEventListener("keydown",e=>{if(e.key==="Enter")doSearch(heroSearch.value)});
@@ -61,7 +61,7 @@ function makePlan(){
  const slots=days.length*sessions,rows=[];let cursor=0;
  days.forEach(day=>{const cells=[];for(let i=0;i<sessions;i++){const sub=chosen[cursor%chosen.length],phase=Math.floor(cursor/chosen.length)%3,task=["Learn / review","Practise questions","Test yourself"][phase];cells.push(`<div class="study-session"><strong>${task}</strong><span>${sub}</span></div>`);cursor++}rows.push(`<div class="day-row"><div class="day-name">${day}</div><div class="session-list">${cells.join("")}</div></div>`)})
  const repeats=Math.floor(slots/chosen.length),remainder=slots%chosen.length;
- plannerMessage.textContent=`Your ${slots}-session plan covers ${chosen.length} subjects. The rotation moves subjects through Learn â†’ Practise â†’ Test, with ${repeats} full round${repeats===1?"":"s"}${remainder?` plus ${remainder} extra session${remainder===1?"":"s"}`:""}.`;
+ plannerMessage.textContent=`Your ${slots}-session plan covers ${chosen.length} subjects. The rotation moves subjects through Learn → Practise → Test, with ${repeats} full round${repeats===1?"":"s"}${remainder?` plus ${remainder} extra session${remainder===1?"":"s"}`:""}.`;
  timetable.innerHTML=rows.join("");
 }
 makeTimetable.addEventListener("click",makePlan);
@@ -130,14 +130,14 @@ makeTimetable.addEventListener("click",makePlan);
   const pandaSessions=$("pandaSessions");
   const sessionResource=$("sessionResource");
 
-  function renderPanda(title="Panda study buddy ðŸ¼",message="Pick a resource, study there, then come back for bamboo.",resourceKey=state.lastResource||"cognito"){
+  function renderPanda(title="Panda study buddy 🐼",message="Pick a resource, study there, then come back for bamboo.",resourceKey=state.lastResource||"cognito"){
     const resource=studyResources[resourceKey]||studyResources.cognito;
     state.lastResource=resourceKey;
     pandaTitle.textContent=title;
     pandaMessage.textContent=message;
     pandaPanelText.textContent=message;
     pandaResourceLink.href=resource.url;
-    pandaResourceLink.textContent=`ðŸš€ Open ${resource.name}`;
+    pandaResourceLink.textContent=`🚀 Open ${resource.name}`;
     bambooCount.textContent=state.bamboo||0;
     pandaPanelBamboo.textContent=state.bamboo||0;
     pandaSessions.textContent=state.completedSessions||0;
@@ -157,22 +157,22 @@ makeTimetable.addEventListener("click",makePlan);
     state.bamboo=(state.bamboo||0)+1;
     state.completedSessions=(state.completedSessions||0)+1;
     save();
-    renderPanda("Bamboo earned! ðŸŽ‹ðŸ¼",`You finished a study session. +1 bamboo! Now go use your chosen resource and keep the learning moving.`,state.lastResource||"cognito");
+    renderPanda("Bamboo earned! 🎋🐼",`You finished a study session. +1 bamboo! Now go use your chosen resource and keep the learning moving.`,state.lastResource||"cognito");
     panda.classList.add("panda-celebrate");
     setTimeout(()=>panda.classList.remove("panda-celebrate"),900);
-    if(state.bamboo===1)addAchievement("First bamboo","Completed your first focus session","ðŸŽ‹");
-    if(state.bamboo===5)addAchievement("Bamboo starter","Collected 5 bamboo","ðŸ¼");
-    if(state.bamboo===10)addAchievement("Bamboo collector","Collected 10 bamboo","ðŸŽ‹");
+    if(state.bamboo===1)addAchievement("First bamboo","Completed your first focus session","🎋");
+    if(state.bamboo===5)addAchievement("Bamboo starter","Collected 5 bamboo","🐼");
+    if(state.bamboo===10)addAchievement("Bamboo collector","Collected 10 bamboo","🎋");
   }
 
   pandaBubble.addEventListener("click",()=>pandaPanel.classList.contains("open")?closePanda():openPanda());
   $("pandaClose").addEventListener("click",closePanda);
   pandaResourceLink.addEventListener("click",()=>{
-    renderPanda("Go learn! ðŸš€ðŸ¼",`I'm staying right here. Study on ${studyResources[state.lastResource||"cognito"].name}, then come back when you're done.`,state.lastResource||"cognito");
+    renderPanda("Go learn! 🚀🐼",`I'm staying right here. Study on ${studyResources[state.lastResource||"cognito"].name}, then come back when you're done.`,state.lastResource||"cognito");
   });
   if(sessionResource)sessionResource.addEventListener("change",()=>{
     const key=sessionResource.value;
-    renderPanda("Resource picked ðŸ“š",`Perfect. I'll point you to ${studyResources[key].name}. Don't camp on HelpMeStudy, go learn!`,key);
+    renderPanda("Resource picked 📚",`Perfect. I'll point you to ${studyResources[key].name}. Don't camp on HelpMeStudy, go learn!`,key);
   });
 
   function save(){
@@ -194,7 +194,7 @@ makeTimetable.addEventListener("click",makePlan);
     return String(value||"").replace(/[&<>'"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
   }
 
-  function addAchievement(title,detail,icon="ðŸ†"){
+  function addAchievement(title,detail,icon="🏆"){
     const exists=(state.achievements||[]).some(a=>a.title===title);
     if(exists)return;
     state.achievements=[...(state.achievements||[]),{title,detail,icon,date:dateKey()}];
@@ -208,7 +208,7 @@ makeTimetable.addEventListener("click",makePlan);
     const items=state.achievements||[];
     badge.textContent=`${items.length} earned`;
     list.classList.toggle("empty-review",!items.length);
-    list.innerHTML=items.length?items.slice().reverse().map(a=>`<div class="achievement-item"><span>${a.icon}</span><div><strong>${escapeHTML(a.title)}</strong><small>${escapeHTML(a.detail)} Â· ${a.date}</small></div></div>`).join(""):"Your first achievement is waiting.";
+    list.innerHTML=items.length?items.slice().reverse().map(a=>`<div class="achievement-item"><span>${a.icon}</span><div><strong>${escapeHTML(a.title)}</strong><small>${escapeHTML(a.detail)} · ${a.date}</small></div></div>`).join(""):"Your first achievement is waiting.";
   }
 
   function renderMistakes(){
@@ -220,7 +220,7 @@ makeTimetable.addEventListener("click",makePlan);
     currentReviewIndex=Math.min(currentReviewIndex,items.length-1);
     const m=items[currentReviewIndex];
     box.className="mistake-review";
-    box.innerHTML=`<div class="review-label">${escapeHTML(m.subject)} Â· ${escapeHTML(m.topic)}</div><strong>${escapeHTML(m.mistake)}</strong><details><summary>Reveal the fix</summary><p>${escapeHTML(m.fix)}</p></details><small>Saved ${m.date}</small>`;
+    box.innerHTML=`<div class="review-label">${escapeHTML(m.subject)} · ${escapeHTML(m.topic)}</div><strong>${escapeHTML(m.mistake)}</strong><details><summary>Reveal the fix</summary><p>${escapeHTML(m.fix)}</p></details><small>Saved ${m.date}</small>`;
   }
 
   function renderRevisit(){
@@ -229,11 +229,11 @@ makeTimetable.addEventListener("click",makePlan);
     const items=state.revisitTopics||[];
     badge.textContent=`${items.length} topic${items.length===1?"":"s"}`;
     list.classList.toggle("empty-review",!items.length);
-    list.innerHTML=items.length?items.map((x,i)=>`<div class="revisit-item"><div><strong>${escapeHTML(x.topic)}</strong><small>${escapeHTML(x.subject)}</small></div><button data-revisit-done="${i}" class="small-button">Understood âœ“</button></div>`).join(""):"Nothing waiting for you.";
+    list.innerHTML=items.length?items.map((x,i)=>`<div class="revisit-item"><div><strong>${escapeHTML(x.topic)}</strong><small>${escapeHTML(x.subject)}</small></div><button data-revisit-done="${i}" class="small-button">Understood ✓</button></div>`).join(""):"Nothing waiting for you.";
     list.querySelectorAll("[data-revisit-done]").forEach(btn=>btn.addEventListener("click",()=>{
       const i=Number(btn.dataset.revisitDone),item=state.revisitTopics[i];
       state.revisitTopics.splice(i,1); save(); renderRevisit();
-      addAchievement(`Mastered ${item.topic}`,`${item.subject} topic marked understood`,"ðŸ§ ");
+      addAchievement(`Mastered ${item.topic}`,`${item.subject} topic marked understood`,"🧠");
     }));
   }
 
@@ -249,7 +249,7 @@ makeTimetable.addEventListener("click",makePlan);
     save();
     const chosenResource=studyResources[state.lastResource]||studyResources.cognito;
     $("focusObjective").textContent=objective;
-    renderPanda("Time to study ðŸŽ¯ðŸ¼",`Your session is running. Study on ${chosenResource.name}, then come back here when the timer ends.`,state.lastResource);
+    renderPanda("Time to study 🎯🐼",`Your session is running. Study on ${chosenResource.name}, then come back here when the timer ends.`,state.lastResource);
     $("focusOverlay").classList.add("open");
     $("focusOverlay").setAttribute("aria-hidden","false");
     document.body.classList.add("focus-lock");
@@ -263,7 +263,7 @@ makeTimetable.addEventListener("click",makePlan);
   }
 
   function showCompletion(){
-    $("completionObjective").textContent=`Your objective: â€œ${state.sessionObjective||"Study"}â€`;
+    $("completionObjective").textContent=`Your objective: “${state.sessionObjective||"Study"}”`;
     $("completionModal").classList.add("open");
     $("completionModal").setAttribute("aria-hidden","false");
     document.body.classList.add("modal-lock");
@@ -287,7 +287,7 @@ makeTimetable.addEventListener("click",makePlan);
 
     streakCount.textContent=state.streak;
     if(state.streak===0) streakMessage.textContent="Complete a focus session to start your streak.";
-    else if(state.lastStudyDate===today) streakMessage.textContent="You showed up today. Keep the chain alive. ðŸ”¥";
+    else if(state.lastStudyDate===today) streakMessage.textContent="You showed up today. Keep the chain alive. 🔥";
     else streakMessage.textContent="You're one session away from keeping it going today.";
 
     renderWeek();
@@ -304,7 +304,7 @@ makeTimetable.addEventListener("click",makePlan);
     state.studyDates=[...(state.studyDates||[]),today];
     save();
     refreshStreak();
-    if(state.streak>=7) addAchievement("7-day study streak",`${state.streak} day streak reached`,"ðŸ”¥");
+    if(state.streak>=7) addAchievement("7-day study streak",`${state.streak} day streak reached`,"🔥");
   }
 
   function renderWeek(){
@@ -323,7 +323,7 @@ makeTimetable.addEventListener("click",makePlan);
       const done=(state.studyDates||[]).includes(key);
       const isToday=key===dateKey();
       return `<div class="streak-day ${done?"done":""} ${isToday?"today":""}">
-        <span>${labels[i]}</span><div class="streak-dot">${done?"âœ“":""}</div>
+        <span>${labels[i]}</span><div class="streak-dot">${done?"✓":""}</div>
       </div>`;
     }).join("");
   }
@@ -338,7 +338,7 @@ makeTimetable.addEventListener("click",makePlan);
     else if(progress>=.25)stage=1;
 
     plantVisual.className=`plant-visual stage-${stage}`;
-    const plants=["ðŸŒ±","ðŸŒ¿","ðŸª´","ðŸŒ³","ðŸŒ³âœ¨"];
+    const plants=["🌱","🌿","🪴","🌳","🌳✨"];
     plantVisual.textContent=plants[stage];
   }
 
@@ -352,7 +352,7 @@ makeTimetable.addEventListener("click",makePlan);
 
     if(state.timerRunning){
       timerStatus.textContent="Growing";
-      timerMessage.textContent="Stay with it. Your plant is growing with you. ðŸŒ¿";
+      timerMessage.textContent="Stay with it. Your plant is growing with you. 🌿";
     }else if(state.timerRemaining===state.timerMinutes*60){
       timerStatus.textContent="Ready";
       timerMessage.textContent="Set a session and let your little plant grow with you.";
@@ -382,8 +382,8 @@ makeTimetable.addEventListener("click",makePlan);
         save();
         setPlantStage();
         timerDisplay.textContent="00:00";
-        timerStatus.textContent="Grown! ðŸŒ³";
-        timerMessage.textContent="You finished your session. Your plant grew up! ðŸŒ³âœ¨";
+        timerStatus.textContent="Grown! 🌳";
+        timerMessage.textContent="You finished your session. Your plant grew up! 🌳✨";
         recordStudySession();
         awardBamboo();
         closeFocus();
@@ -429,7 +429,7 @@ makeTimetable.addEventListener("click",makePlan);
       state.timerRunning=false;
       save();
       renderTimer();
-      $("startTimer").textContent="Continue growing ðŸŒ±";
+      $("startTimer").textContent="Continue growing 🌱";
       $("focusPause").textContent="Resume";
     }else{
       if(openFocus()){
@@ -450,11 +450,11 @@ makeTimetable.addEventListener("click",makePlan);
   $("focusReset").addEventListener("click",()=>{
     resetTimer(); $("focusPause").textContent="Pause"; $("focusStatus").textContent="Timer reset. Ready when you are.";
   });
-  $("exitFocus").addEventListener("click",()=>{stopInterval();state.timerRunning=false;save();renderTimer();closeFocus();$("startTimer").textContent="Start session ðŸŽ¯";});
+  $("exitFocus").addEventListener("click",()=>{stopInterval();state.timerRunning=false;save();renderTimer();closeFocus();$("startTimer").textContent="Start session 🎯";});
 
   $("resetTimer").addEventListener("click",()=>{
     resetTimer();
-    $("startTimer").textContent="Start session ðŸŽ¯";
+    $("startTimer").textContent="Start session 🎯";
   });
 
   $("resetStreak").addEventListener("click",()=>{
@@ -470,21 +470,21 @@ makeTimetable.addEventListener("click",makePlan);
   $("objectiveYes").addEventListener("click",()=>{
     hideCompletion();
     const objective=state.sessionObjective||"Focus session";
-    addAchievement(`Completed: ${objective}`,"Timed focus objective completed","ðŸŽ¯");
-    if(!(state.achievements||[]).some(a=>a.title==="First focus objective complete")) addAchievement("First focus objective complete","You finished your first timed objective","ðŸŒŸ");
-    $("timerMessage").textContent="Objective complete. Nice work. ðŸŽ¯";
-    $("startTimer").textContent="Start session ðŸŽ¯";
+    addAchievement(`Completed: ${objective}`,"Timed focus objective completed","🎯");
+    if(!(state.achievements||[]).some(a=>a.title==="First focus objective complete")) addAchievement("First focus objective complete","You finished your first timed objective","🌟");
+    $("timerMessage").textContent="Objective complete. Nice work. 🎯";
+    $("startTimer").textContent="Start session 🎯";
     state.sessionObjective=""; $("sessionObjective").value=""; save();
   });
   $("objectiveNo").addEventListener("click",()=>{
     hideCompletion();
     const objective=state.sessionObjective||"This session";
-    const topic=objective.length>55?objective.slice(0,55)+"â€¦":objective;
+    const topic=objective.length>55?objective.slice(0,55)+"…":objective;
     const exists=(state.revisitTopics||[]).some(x=>x.topic.toLowerCase()===topic.toLowerCase());
     if(!exists) state.revisitTopics=[...(state.revisitTopics||[]),{subject:"Focus objective",topic,date:dateKey()}];
     save(); renderRevisit();
     $("timerMessage").textContent="Saved to Topics to Revisit. You can come back to it.";
-    $("startTimer").textContent="Start session ðŸŽ¯";
+    $("startTimer").textContent="Start session 🎯";
     state.sessionObjective=""; $("sessionObjective").value=""; save();
   });
 
@@ -492,7 +492,7 @@ makeTimetable.addEventListener("click",makePlan);
     const subject=$("mistakeSubject").value.trim(),topic=$("mistakeTopic").value.trim(),mistake=$("mistakeText").value.trim(),fix=$("mistakeFix").value.trim();
     if(!subject||!topic||!mistake||!fix){$("mistakeText").focus();return;}
     state.mistakes=[...(state.mistakes||[]),{subject,topic,mistake,fix,date:dateKey()}];
-    save(); renderMistakes(); addAchievement("Saved my first mistake",`${subject} Â· ${topic}`,"ðŸ§ ");
+    save(); renderMistakes(); addAchievement("Saved my first mistake",`${subject} · ${topic}`,"🧠");
     ["mistakeSubject","mistakeTopic","mistakeText","mistakeFix"].forEach(id=>$(id).value="");
   });
   $("reviewMistake").addEventListener("click",()=>{
@@ -518,27 +518,27 @@ makeTimetable.addEventListener("click",makePlan);
 
     const plans={
       1:{
-        title:"You're chilling ðŸ˜Ž",
+        title:"You're chilling 😎",
         text:`Keep your ${subject} skills warm without overloading yourself.`,
         tasks:["20 min: review one topic","10 min: do 5 practice questions","5 min: write down anything you still want to revisit."]
       },
       2:{
-        title:"A little cooked ðŸ™‚",
+        title:"A little cooked 🙂",
         text:`Let's target ${subject} without turning the evening into a six-hour study marathon.`,
         tasks:["25 min: review your weakest topic","15 min: practise questions","5 min: check mistakes and make a tiny to-do list."]
       },
       3:{
-        title:"Pretty cooked ðŸ« ",
+        title:"Pretty cooked 🫠",
         text:`For Year ${year} ${subject}, focus on the gaps first. Don't try to relearn the entire universe tonight.`,
         tasks:["25 min: weakest topic only","20 min: exam-style questions","10 min: mark, correct and explain your mistakes."]
       },
       4:{
-        title:"Absolutely cooked ðŸ”¥",
+        title:"Absolutely cooked 🔥",
         text:`Emergency mode: pick one high-priority ${subject} topic and make real progress on it.`,
         tasks:["10 min: identify what you don't know","30 min: learn/revise one topic","20 min: questions + corrections."]
       },
       5:{
-        title:"Exam emergency ðŸš¨",
+        title:"Exam emergency 🚨",
         text:`No panic. We are shrinking the problem. One topic, one session, one next step.`,
         tasks:["5 min: choose the most urgent topic","25 min: focused revision","20 min: exam questions","5 min: write the three mistakes you must fix next."]
       }
@@ -619,7 +619,7 @@ makeTimetable.addEventListener("click",makePlan);
     $("candidateToggle").textContent="On";
     $("candidateToggle").setAttribute("aria-pressed","true");
     updateCandidate();
-    $("candidateMessage").textContent=`Candidate Mode saved for Year ${state.candidateYear}. Your countdown is live on this device. ðŸŽ“`;
+    $("candidateMessage").textContent=`Candidate Mode saved for Year ${state.candidateYear}. Your countdown is live on this device. 🎓`;
   });
 
   $("candidateYear").value=state.candidateYear;
@@ -628,7 +628,7 @@ makeTimetable.addEventListener("click",makePlan);
 
   $("sessionObjective").value=state.sessionObjective||"";
   if(sessionResource)sessionResource.value=state.lastResource||"cognito";
-  $("startTimer").textContent="Start session ðŸŽ¯";
+  $("startTimer").textContent="Start session 🎯";
   renderMistakes();
   renderRevisit();
   renderAchievements();
@@ -644,5 +644,3 @@ makeTimetable.addEventListener("click",makePlan);
     }
   });
 })();
-
-
